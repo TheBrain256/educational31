@@ -11,18 +11,16 @@ class Product:
         return (f'{self.name}, {self.weight}, {self.category}')
 
 
-class Shop(Product):
+class Shop:
 
-    __file_name = 'products.txt'
-
-    def __init__(self, name, weight, category):
-        super().__init__(name, weight, category)
+    def __init__(self):
+        self.__file_name = 'products.txt'
 
     def get_products(self):
         file = open(self.__file_name, 'r')
         st = file.read()
         file.close()
-        print(f'{st}')
+        return (f'{st}')
 
     def add(self, *products):
         for i in products:
